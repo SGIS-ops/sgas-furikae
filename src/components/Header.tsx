@@ -24,7 +24,7 @@ export const Header: React.FC<HeaderProps> = ({
   const { language, setLanguage, t } = useTranslation();
 
   return (
-    <header className="bg-white text-slate-900 border-b border-slate-200 md:sticky top-0 z-30 shadow-xs">
+    <header className="bg-white text-slate-900 md:sticky top-0 z-30 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2.5">
           
@@ -150,6 +150,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
       </div>
+      <div className="h-[3px] gold-gradient" aria-hidden="true" />
     </header>
   );
 };

@@ -13,3 +13,8 @@
 @layer base {
   h1, h2, h3 { font-family: var(--font-serif); letter-spacing: 0.02em; }
 }
+
+/* チラシと同じ上品なゴールド(#C5A059基調)。細い線や縁としてだけ使う */
+.gold-gradient {
+  background-image: linear-gradient(90deg, #9C7A3C 0%, #E6CB8A 28%, #C5A059 50%, #F0DDA8 72%, #A8844A 100%);
+}

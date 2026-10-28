@@ -202,7 +202,8 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
       <div className="bg-white rounded-2xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
         
         {/* Header */}
-        <div className="bg-[#1F3C6B] text-white p-4 sm:p-5 flex items-center justify-between shrink-0">
+        <div className="bg-[#1F3C6B] text-white p-4 sm:p-5 flex items-center justify-between shrink-0 relative">
+          <div className="absolute inset-x-0 bottom-0 h-[2px] gold-gradient" aria-hidden="true" />
           <div className="flex items-center space-x-2.5">
             <div className="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center">
               <CalendarIcon className="w-5 h-5" />

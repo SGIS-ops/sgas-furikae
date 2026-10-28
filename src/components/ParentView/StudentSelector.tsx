@@ -85,7 +85,8 @@ export const StudentSelector: React.FC<StudentSelectorProps> = ({
 
         {/* Selected Student Transfer Balance Showcase Card */}
         {currentStudent && (
-          <div className="bg-white text-slate-900 rounded-xl p-4 sm:p-5 flex flex-col justify-between w-full shadow-xs border border-slate-200 border-t-4 border-t-amber-400 relative overflow-hidden">
+          <div className="bg-white text-slate-900 rounded-xl p-4 sm:p-5 flex flex-col justify-between w-full shadow-xs border border-slate-200 relative overflow-hidden">
+            <div className="absolute inset-x-0 top-0 h-1 gold-gradient" aria-hidden="true" />
             
             <div className="flex items-start justify-between">
               <div>

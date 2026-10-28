@@ -73,6 +73,7 @@ export const ParentLogin: React.FC<ParentLoginProps> = ({
         
         {/* Card Top Banner */}
         <div className="bg-[#1F3C6B] text-white p-6 sm:p-8 text-center relative">
+          <div className="absolute inset-x-0 bottom-0 h-[3px] gold-gradient" aria-hidden="true" />
           <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-white/20">
             <Lock className="w-7 h-7 text-blue-200" />
           </div>
