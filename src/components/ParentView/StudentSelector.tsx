@@ -11,6 +11,8 @@ interface StudentSelectorProps {
   onSelectStudent: (id: string) => void;
   absences?: AbsenceRecord[];
   bookings?: TransferBooking[];
+  profile?: React.ReactNode;
+  tabs?: React.ReactNode;
 }
 
 export const StudentSelector: React.FC<StudentSelectorProps> = ({
@@ -18,7 +20,9 @@ export const StudentSelector: React.FC<StudentSelectorProps> = ({
   selectedStudentId,
   onSelectStudent,
   absences = [],
-  bookings = []
+  bookings = [],
+  profile,
+  tabs
 }) => {
   const { language, t, getClassName, getWeekdayName } = useTranslation();
 
@@ -38,12 +42,14 @@ export const StudentSelector: React.FC<StudentSelectorProps> = ({
   const availableTickets = studentTickets.filter((t) => !t.isBooked && !t.isExpired);
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-sm mb-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        
+    <div className="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-5 shadow-xs">
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-stretch">
+        <div className="flex flex-col gap-4 min-w-0">
+        {profile}
+
         {/* Child Selector Switcher (Only shown if parent has multiple children) */}
-        {students.length > 1 ? (
-          <div className="flex-1">
+        {students.length > 1 && (
+          <div>
             <label className="block text-xs font-semibold text-slate-500 mb-1.5 uppercase tracking-wider">
               {language === 'en' ? 'Select Child (Siblings in Same Household)' : 'お子さまの選択（同一ご家庭のお子さま）'}
             </label>
@@ -56,7 +62,7 @@ export const StudentSelector: React.FC<StudentSelectorProps> = ({
                     key={s.id}
                     id={`select-student-${s.id}`}
                     onClick={() => onSelectStudent(s.id)}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-150 ${
+                    className={`flex items-center space-x-2 px-4 min-h-[44px] rounded-xl text-sm font-medium transition-all duration-150 ${
                       isSelected
                         ? 'bg-slate-900 text-white shadow-md shadow-slate-900/10 ring-2 ring-sky-500 ring-offset-1'
                         : 'bg-slate-100 hover:bg-slate-200/80 text-slate-700 border border-slate-200/60'
@@ -72,33 +78,14 @@ export const StudentSelector: React.FC<StudentSelectorProps> = ({
               })}
             </div>
           </div>
-        ) : (
-          <div className="flex-1">
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">
-              {language === 'en' ? 'Student Profile' : '受講生情報'}
-            </div>
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center font-bold text-base">
-                {currentStudent?.name.charAt(0)}
-              </div>
-              <div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-base font-extrabold text-slate-900">{currentStudent?.name}</span>
-                  <span className={`text-xs px-2 py-0.5 rounded-md font-bold ${currentClass?.badgeBg || 'bg-slate-200'}`}>
-                    {getClassName(currentStudent?.classId || '')}
-                  </span>
-                </div>
-                <div className="text-xs text-slate-500 mt-0.5">
-                  {language === 'en' ? 'Guardian: ' : '保護者様: '}{currentStudent?.parentName}
-                </div>
-              </div>
-            </div>
-          </div>
         )}
+        <div className="flex-1" />
+        {tabs}
+        </div>
 
         {/* Selected Student Transfer Balance Showcase Card */}
         {currentStudent && (
-          <div className="bg-white text-slate-900 rounded-xl p-4 sm:p-5 flex flex-col justify-between min-w-[300px] sm:min-w-[360px] shadow-xs border border-slate-200 border-t-4 border-t-amber-400 relative overflow-hidden">
+          <div className="bg-white text-slate-900 rounded-xl p-4 sm:p-5 flex flex-col justify-between w-full shadow-xs border border-slate-200 border-t-4 border-t-amber-400 relative overflow-hidden">
             
             <div className="flex items-start justify-between">
               <div>

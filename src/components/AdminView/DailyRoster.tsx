@@ -210,30 +210,30 @@ export const DailyRoster: React.FC<DailyRosterProps> = ({
               className="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden flex flex-col"
             >
               {/* Card Header */}
-              <div className="bg-slate-900 text-white p-4 flex items-center justify-between">
+              <div className="bg-sky-50 text-slate-900 border-b border-sky-200 p-4 flex items-center justify-between">
                 <div>
                   <div className="flex items-center space-x-2">
                     <span className={`text-xs px-2.5 py-0.5 rounded-md font-bold ${cls.badgeBg}`}>
                       {cls.jpName} ({cls.name})
                     </span>
-                    {cls.ageRange && <span className="text-xs text-slate-300">{language === 'en' ? `Ages: ${cls.ageRange}` : `対象: ${cls.ageRange}`}</span>}
+                    {cls.ageRange && <span className="text-xs text-slate-500">{language === 'en' ? `Ages: ${cls.ageRange}` : `対象: ${cls.ageRange}`}</span>}
                   </div>
-                  <div className="text-xs text-slate-300 mt-1 flex items-center gap-3">
+                  <div className="text-xs text-slate-600 mt-1 flex flex-wrap items-center gap-x-3 gap-y-0.5">
                     <span>
-                      {language === 'en' ? 'Make-up slots: ' : '振替枠: '}<strong className="text-amber-400">{cap.transferBookedCount} / {cap.maxTransferQuota}{language === 'en' ? '' : '名'}</strong>
+                      {language === 'en' ? 'Make-up slots: ' : '振替枠: '}<strong className="text-amber-700">{cap.transferBookedCount} / {cap.maxTransferQuota}{language === 'en' ? '' : '名'}</strong>
                     </span>
                     <span>
-                      {language === 'en' ? 'Expected attendance: ' : '総出席予定: '}<strong className="text-sky-300">{cap.totalPresentCount} / {cap.maxTotalCapacity}{language === 'en' ? '' : '名'}</strong>
+                      {language === 'en' ? 'Expected attendance: ' : '総出席予定: '}<strong className="text-slate-900">{cap.totalPresentCount} / {cap.maxTotalCapacity}{language === 'en' ? '' : '名'}</strong>
                     </span>
                   </div>
                 </div>
 
                 <button
                   onClick={() => onOpenQuotaModal(selectedDate, cls.id)}
-                  className="p-2 text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-xl text-xs font-semibold flex items-center space-x-1 border border-slate-700 transition"
+                  className="p-2 min-h-[40px] min-w-[40px] justify-center text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-50 rounded-xl text-xs font-semibold flex items-center space-x-1 border border-slate-300 transition"
                   title={language === 'en' ? 'Customize capacity & make-up slots' : '定員・振替枠のカスタマイズ'}
                 >
-                  <Settings className="w-3.5 h-3.5 text-amber-400" />
+                  <Settings className="w-3.5 h-3.5 text-amber-600" />
                   <span className="hidden sm:inline">{language === 'en' ? 'Slots' : '枠設定'}</span>
                 </button>
               </div>

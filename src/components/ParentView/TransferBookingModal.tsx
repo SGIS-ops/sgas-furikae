@@ -490,7 +490,7 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
 
         {/* Footer */}
         {!successMsg && (
-          <div className="bg-slate-50 border-t border-slate-200 p-4 flex items-center justify-between shrink-0 text-xs">
+          <div className="bg-slate-50 border-t border-slate-200 p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0 text-xs">
             <div>
               {selectedDate ? (
                 <div className="flex flex-wrap items-center gap-1.5">
@@ -513,11 +513,11 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
               )}
             </div>
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center gap-2 sm:shrink-0">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-3.5 py-2 font-semibold text-slate-600 bg-slate-200/80 rounded-xl hover:bg-slate-300 transition"
+                className="min-h-[44px] whitespace-nowrap px-4 py-2 font-semibold text-slate-600 bg-slate-200/80 rounded-xl hover:bg-slate-300 transition"
               >
                 {t('common.cancel')}
               </button>
@@ -525,7 +525,7 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
                 type="button"
                 disabled={!selectedDate || student.transferBalance <= 0}
                 onClick={handleConfirmBooking}
-                className="px-5 py-2 bg-[#1F3C6B] hover:bg-blue-900 disabled:bg-slate-300 text-white font-bold rounded-xl shadow-md transition"
+                className="flex-1 sm:flex-none min-h-[44px] px-5 py-2 bg-[#1F3C6B] hover:bg-blue-900 disabled:bg-slate-300 text-white font-bold rounded-xl shadow-md transition"
               >
                 {t('booking.confirm')}
               </button>

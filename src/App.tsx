@@ -864,10 +864,10 @@ export default function App() {
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
         
         {/* Info Banner */}
-        <div className="mb-6 bg-sky-50 text-slate-800 rounded-2xl p-4 sm:p-5 shadow-xs border border-sky-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="mb-6 hidden md:flex bg-sky-50 text-slate-800 rounded-2xl p-4 sm:p-5 shadow-xs border border-sky-200 flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center space-x-3">
             <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
               <Sparkles className="w-5 h-5" />

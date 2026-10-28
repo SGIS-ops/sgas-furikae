@@ -174,10 +174,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       </div>
 
       {/* Admin Tab Switcher */}
-      <div className="bg-slate-200/60 p-1 rounded-2xl flex flex-wrap gap-1 border border-slate-300/60">
+      <div className="bg-slate-100 p-1 rounded-2xl flex flex-nowrap gap-1 border border-slate-200 overflow-x-auto">
         <button
           onClick={() => setActiveTab('roster')}
-          className={`flex-1 min-w-[130px] py-2.5 px-3 rounded-xl text-xs font-extrabold transition ${
+          className={`flex-1 shrink-0 whitespace-nowrap min-h-[44px] py-2.5 px-3 rounded-xl text-xs font-extrabold transition ${
             activeTab === 'roster'
               ? 'bg-slate-900 text-white shadow-sm'
               : 'text-slate-700 hover:bg-slate-300/60'
@@ -188,7 +188,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
         <button
           onClick={() => setActiveTab('students')}
-          className={`flex-1 min-w-[130px] py-2.5 px-3 rounded-xl text-xs font-extrabold transition ${
+          className={`flex-1 shrink-0 whitespace-nowrap min-h-[44px] py-2.5 px-3 rounded-xl text-xs font-extrabold transition ${
             activeTab === 'students'
               ? 'bg-slate-900 text-white shadow-sm'
               : 'text-slate-700 hover:bg-slate-300/60'
@@ -223,7 +223,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
         <button
           onClick={() => setActiveTab('sheets')}
-          className={`flex-1 min-w-[130px] py-2.5 px-3 rounded-xl text-xs font-extrabold transition ${
+          className={`flex-1 shrink-0 whitespace-nowrap min-h-[44px] py-2.5 px-3 rounded-xl text-xs font-extrabold transition ${
             activeTab === 'sheets'
               ? 'bg-slate-900 text-white shadow-sm'
               : 'text-slate-700 hover:bg-slate-300/60'
