@@ -81,7 +81,7 @@ const AbsenceReportModalInner: React.FC<AbsenceReportModalProps> = ({
       <div className="bg-white rounded-2xl max-w-lg w-full border border-slate-200 shadow-2xl overflow-hidden">
         
         {/* Modal Header */}
-        <div className="bg-[#1E3A8A] text-white p-5 flex items-center justify-between">
+        <div className="bg-[#1F3C6B] text-white p-5 flex items-center justify-between">
           <div className="flex items-center space-x-2.5">
             <div className="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center">
               <Calendar className="w-5 h-5" />

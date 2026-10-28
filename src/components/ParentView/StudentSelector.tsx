@@ -98,23 +98,23 @@ export const StudentSelector: React.FC<StudentSelectorProps> = ({
 
         {/* Selected Student Transfer Balance Showcase Card */}
         {currentStudent && (
-          <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white rounded-xl p-4 sm:p-5 flex flex-col justify-between min-w-[300px] sm:min-w-[360px] shadow-md border border-slate-700/60 relative overflow-hidden">
+          <div className="bg-white text-slate-900 rounded-xl p-4 sm:p-5 flex flex-col justify-between min-w-[300px] sm:min-w-[360px] shadow-xs border border-slate-200 border-t-4 border-t-amber-400 relative overflow-hidden">
             
             <div className="flex items-start justify-between">
               <div>
-                <div className="flex items-center space-x-1.5 text-xs text-slate-300 font-medium mb-1">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <div className="flex items-center space-x-1.5 text-xs text-slate-500 font-medium mb-1">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                   <span>{t('parent.remainingTickets')}</span>
                 </div>
                 <div className="flex items-baseline space-x-2">
-                  <span className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+                  <span className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
                     {currentStudent.transferBalance}
                   </span>
-                  <span className="text-sm font-semibold text-slate-300">{t('parent.ticketsUnit')}</span>
+                  <span className="text-sm font-semibold text-slate-500">{t('parent.ticketsUnit')}</span>
                 </div>
               </div>
 
-              <div className="w-11 h-11 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400">
+              <div className="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700">
                 <CreditCard className="w-5 h-5" />
               </div>
             </div>
@@ -125,9 +125,9 @@ export const StudentSelector: React.FC<StudentSelectorProps> = ({
                 {availableTickets.map((t) => (
                   <span
                     key={t.absenceId}
-                    className="inline-flex items-center gap-1 bg-amber-400/20 border border-amber-400/40 text-amber-200 text-[10px] font-bold px-2 py-0.5 rounded-md"
+                    className="inline-flex items-center gap-1 bg-amber-50 border border-amber-300 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-md"
                   >
-                    <Ticket className="w-2.5 h-2.5 text-amber-400" />
+                    <Ticket className="w-2.5 h-2.5 text-amber-600" />
                     <span>【{language === 'en' ? `${t.absenceDate} Missed` : formatAbsenceLabel(t.absenceDate)}】</span>
                   </span>
                 ))}
@@ -135,29 +135,29 @@ export const StudentSelector: React.FC<StudentSelectorProps> = ({
             )}
 
             {/* Transfer Expiry Date Section */}
-            <div className="mt-3 pt-2.5 border-t border-slate-700/70 space-y-1 text-[11px]">
+            <div className="mt-3 pt-2.5 border-t border-slate-200 space-y-1 text-[11px]">
               {currentStudent.transferBalance > 0 && earliestExpiry ? (
                 <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-1.5 text-amber-300 font-bold">
-                    <Clock className="w-3.5 h-3.5 text-amber-400" />
+                  <div className="flex items-center gap-1.5 text-slate-800 font-bold">
+                    <Clock className="w-3.5 h-3.5 text-amber-600" />
                     <span>
                       {language === 'en' ? 'Valid until: ' : '有効期限: '}
                       {language === 'en' ? earliestExpiry.expiryDate : `${formatJapaneseDate(earliestExpiry.expiryDate)} まで`}
                     </span>
                   </div>
                   {earliestExpiry.isExpiringSoon ? (
-                    <span className="px-1.5 py-0.5 bg-rose-500/30 text-rose-200 border border-rose-400/40 rounded text-[10px] font-bold flex items-center gap-0.5">
+                    <span className="px-1.5 py-0.5 bg-rose-50 text-rose-700 border border-rose-200 rounded text-[10px] font-bold flex items-center gap-0.5">
                       <AlertTriangle className="w-2.5 h-2.5" />
                       {language === 'en' ? `${earliestExpiry.daysRemaining}d left` : `あと${earliestExpiry.daysRemaining}日`}
                     </span>
                   ) : (
-                    <span className="text-slate-300 font-medium text-[10px]">
+                    <span className="text-slate-500 font-medium text-[10px]">
                       ({language === 'en' ? `${earliestExpiry.daysRemaining}d left` : `残り${earliestExpiry.daysRemaining}日`})
                     </span>
                   )}
                 </div>
               ) : (
-                <div className="text-slate-400 flex items-center gap-1.5">
+                <div className="text-slate-500 flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-slate-500" />
                   <span>
                     {language === 'en'
@@ -167,8 +167,8 @@ export const StudentSelector: React.FC<StudentSelectorProps> = ({
                 </div>
               )}
 
-              <div className="text-slate-400 flex items-center gap-1">
-                <Calendar className="w-3 h-3 text-sky-400" />
+              <div className="text-slate-500 flex items-center gap-1">
+                <Calendar className="w-3 h-3 text-sky-600" />
                 <span>
                   {t('parent.regularDays')}:{' '}
                   {currentStudent.regularDays.map((d) => getWeekdayName(d, 'long')).join(', ')}

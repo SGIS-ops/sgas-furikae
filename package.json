@@ -16,6 +16,8 @@
     "e2e:remote": "node e2e/remote.e2e.cjs"
   },
   "dependencies": {
+    "@fontsource/zen-kaku-gothic-new": "^5.3.1",
+    "@fontsource/zen-old-mincho": "^5.3.1",
     "lucide-react": "^0.546.0",
     "react": "^19.0.1",
     "react-dom": "^19.0.1"

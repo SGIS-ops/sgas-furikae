@@ -72,7 +72,7 @@ export const ParentLogin: React.FC<ParentLoginProps> = ({
       <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
         
         {/* Card Top Banner */}
-        <div className="bg-[#1E3A8A] text-white p-6 sm:p-8 text-center relative">
+        <div className="bg-[#1F3C6B] text-white p-6 sm:p-8 text-center relative">
           <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-white/20">
             <Lock className="w-7 h-7 text-blue-200" />
           </div>
@@ -129,7 +129,7 @@ export const ParentLogin: React.FC<ParentLoginProps> = ({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-[#1E3A8A] hover:bg-blue-900 disabled:bg-slate-400 text-white font-bold py-3 px-4 rounded-xl text-sm shadow-md transition flex items-center justify-center space-x-2"
+            className="w-full bg-[#1F3C6B] hover:bg-blue-900 disabled:bg-slate-400 text-white font-bold py-3 px-4 rounded-xl text-sm shadow-md transition flex items-center justify-center space-x-2"
           >
             <span>{t('login.submit')}</span>
             <ArrowRight className="w-4 h-4" />
@@ -156,7 +156,7 @@ export const ParentLogin: React.FC<ParentLoginProps> = ({
       {!isRemote && (
       <div className="mt-6 bg-blue-50/80 border border-blue-200 rounded-2xl p-4 text-xs">
         <div className="flex items-center justify-between mb-2.5">
-          <span className="font-extrabold text-[#1E3A8A] flex items-center gap-1.5">
+          <span className="font-extrabold text-[#1F3C6B] flex items-center gap-1.5">
             <Sparkles className="w-4 h-4 text-blue-600" />
             {language === 'en' ? '1-Tap Demo Student Login:' : 'ワンタップお試しログイン（デモ用）:'}
           </span>

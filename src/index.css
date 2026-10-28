@@ -1,1 +1,15 @@
 @import "tailwindcss";
+@import "@fontsource/zen-old-mincho/700.css";
+@import "@fontsource/zen-kaku-gothic-new/400.css";
+@import "@fontsource/zen-kaku-gothic-new/700.css";
+@import "./themes/c.css";
+
+@theme {
+  --font-sans: "Zen Kaku Gothic New", "Noto Sans JP", system-ui, sans-serif;
+  --font-serif: "Zen Old Mincho", "Noto Serif JP", serif;
+}
+
+/* 見出しは明朝、本文はゴシック(チラシ・ポスターのルールに合わせる) */
+@layer base {
+  h1, h2, h3 { font-family: var(--font-serif); letter-spacing: 0.02em; }
+}

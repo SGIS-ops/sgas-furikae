@@ -155,7 +155,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
     <div className="bg-white rounded-3xl border border-slate-200 shadow-xs overflow-hidden flex flex-col space-y-0">
       
       {/* Top Banner with Stamp Ticket Badge & Operating Info */}
-      <div className="bg-[#1E3A8A] text-white p-4 px-5 sm:px-6 flex flex-wrap items-center justify-between gap-3">
+      <div className="bg-sky-50 text-slate-800 border-b border-sky-200 p-4 px-5 sm:px-6 flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2.5">
           <div className="flex items-center space-x-1.5 bg-amber-400 text-slate-950 font-black px-3 py-1 rounded-xl shadow-xs text-xs">
             <Ticket className="w-4 h-4 text-slate-900" />
@@ -167,7 +167,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
               {availableTickets.map((t) => (
                 <span
                   key={t.absenceId}
-                  className="bg-blue-900/90 text-amber-300 border border-blue-700/80 px-2 py-0.5 rounded-lg text-[11px] font-bold flex items-center gap-1"
+                  className="bg-white text-amber-800 border border-amber-300 px-2 py-0.5 rounded-lg text-[11px] font-bold flex items-center gap-1"
                 >
                   <span>【{language === 'en' ? `${t.absenceDate} absence` : formatAbsenceLabel(t.absenceDate)}】</span>
                 </span>
@@ -175,22 +175,22 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
             </div>
           )}
 
-          <span className="text-xs text-blue-200 font-medium hidden md:inline">
+          <span className="text-xs text-slate-500 font-medium hidden md:inline">
             {language === 'en' ? 'Open Mon–Fri (closed weekends & holidays) / 3 months shown' : '営業日: 月〜金（土日祝休校）/ 縦スクロール3か月連続表示'}
           </span>
         </div>
 
         {/* Fast Year Selector */}
-        <div className="flex items-center space-x-1 bg-blue-900/80 p-1 rounded-xl text-xs border border-blue-700/60">
-          <span className="text-blue-300 font-bold px-1.5 text-[11px]">{language === 'en' ? 'Year:' : '表示年:'}</span>
+        <div className="flex items-center space-x-1 bg-white p-1 rounded-xl text-xs border border-sky-200">
+          <span className="text-slate-500 font-bold px-1.5 text-[11px]">{language === 'en' ? 'Year:' : '表示年:'}</span>
           {[2025, 2026, 2027, 2028].map((yr) => (
             <button
               key={yr}
               onClick={() => jumpToYear(yr)}
               className={`px-2.5 py-0.5 rounded-lg font-bold transition text-[11px] ${
                 startYear === yr
-                  ? 'bg-white text-[#1E3A8A] shadow-2xs'
-                  : 'text-blue-200 hover:bg-blue-800'
+                  ? 'bg-slate-900 text-white shadow-2xs'
+                  : 'text-slate-600 hover:bg-sky-100'
               }`}
             >
               {language === 'en' ? yr : `${yr}年`}
@@ -300,7 +300,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
                 onClick={() => setActiveMonthView(idx)}
                 className={`px-3 py-1.5 rounded-xl text-xs font-extrabold transition flex items-center gap-1 ${
                   activeMonthView === idx
-                    ? 'bg-[#1E3A8A] text-white shadow-xs'
+                    ? 'bg-[#1F3C6B] text-white shadow-xs'
                     : 'bg-white/80 hover:bg-white text-slate-700'
                 }`}
               >
@@ -354,8 +354,8 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
               
               {/* Month Header Divider */}
               <div className="bg-slate-100/90 border-y border-slate-200 px-5 py-2.5 flex items-center justify-between sticky top-0 z-10 backdrop-blur-sm">
-                <span className="text-sm font-black text-[#1E3A8A] flex items-center gap-2">
-                  <span className="bg-[#1E3A8A] text-white px-2.5 py-0.5 rounded-lg text-xs">
+                <span className="text-sm font-black text-[#1F3C6B] flex items-center gap-2">
+                  <span className="bg-[#1F3C6B] text-white px-2.5 py-0.5 rounded-lg text-xs">
                     {year}
                   </span>
                   <span>{monthNames[month]} {language === 'en' ? 'Schedule' : 'スケジュール'}</span>

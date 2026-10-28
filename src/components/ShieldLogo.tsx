@@ -26,5 +26,5 @@ export const ShieldLogo: React.FC<ShieldLogoProps> = ({ className = '', size = '
     );
   }
 
-  return <Shield className={`${sizeClasses} text-[#1E3A8A] fill-blue-900/10 ${className}`} />;
+  return <Shield className={`${sizeClasses} text-[#1F3C6B] fill-blue-900/10 ${className}`} />;
 };

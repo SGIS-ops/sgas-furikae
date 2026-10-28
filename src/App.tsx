@@ -867,17 +867,17 @@ export default function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         
         {/* Info Banner */}
-        <div className="mb-6 bg-gradient-to-r from-sky-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="mb-6 bg-sky-50 text-slate-800 rounded-2xl p-4 sm:p-5 shadow-xs border border-sky-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-sm font-bold text-slate-100">
+              <h2 className="text-sm font-bold text-slate-900">
                 {L('SOLTILO GSA アフタースクール部門 振替＆欠席連絡アプリ', 'SOLTILO GSA Afterschool — Absence & Make-up App')}
               </h2>
-              <p className="text-xs text-slate-300 mt-0.5">
-                {L('対象クラス', 'Classes')}: <span className="text-emerald-300">EX1</span> ・ <span className="text-teal-300">EX2</span> ・ <span className="text-sky-300">Kin</span> ・ <span className="text-indigo-300">Ele1</span> ・ <span className="text-violet-300">Ele2</span>
+              <p className="text-xs text-slate-600 mt-0.5">
+                {L('対象クラス', 'Classes')}: <span className="text-sky-700">EX1</span> ・ <span className="text-indigo-700">EX2</span> ・ <span className="text-violet-700">Kin</span> ・ <span className="text-emerald-700">Ele1</span> ・ <span className="text-amber-700">Ele2</span>
               </p>
             </div>
           </div>
@@ -885,7 +885,7 @@ export default function App() {
           {!remote && (
           <button
             onClick={handleResetData}
-            className="text-xs text-slate-400 hover:text-rose-300 flex items-center gap-1 self-start sm:self-auto bg-slate-800/80 hover:bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-700 transition"
+            className="text-xs text-slate-500 hover:text-rose-700 flex items-center gap-1 self-start sm:self-auto bg-white hover:bg-rose-50 px-3 py-1.5 rounded-xl border border-slate-200 transition"
             title={L('サンプルデータを初期状態にリセット', 'Reset sample data to its initial state')}
           >
             <RotateCcw className="w-3.5 h-3.5" />
@@ -960,22 +960,22 @@ export default function App() {
       />
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 border-t border-slate-800 py-5 px-4 text-center text-xs space-y-2">
+      <footer className="bg-slate-100 text-slate-500 border-t border-slate-200 py-5 px-4 text-center text-xs space-y-2">
         <div className="flex flex-wrap items-center justify-center gap-2.5">
           <p>© SOLTILO GSA International School - Afterschool Transfer Management System</p>
-          <span className="text-slate-600 hidden sm:inline">|</span>
+          <span className="text-slate-300 hidden sm:inline">|</span>
           {!remote && (
           <>
-          <span className="text-amber-400 font-medium bg-amber-950/60 border border-amber-800/60 px-2 py-0.5 rounded-md text-[11px]">
+          <span className="text-amber-800 font-medium bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-md text-[11px]">
             {L('※ 公開デモ版: 表示中の生徒名・保護者名はすべて架空のサンプルデータです', 'Demo: all student and guardian names shown are fictional samples.')}
           </span>
           <button
             type="button"
             onClick={handleResetData}
-            className="text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center gap-1 cursor-pointer"
+            className="text-slate-600 hover:text-slate-900 bg-white hover:bg-slate-50 border border-slate-300 px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center gap-1 cursor-pointer"
             title={L('サンプルデータを初期状態にリセット', 'Reset sample data to its initial state')}
           >
-            <RotateCcw className="w-3 h-3 text-sky-400" />
+            <RotateCcw className="w-3 h-3 text-sky-600" />
             <span>{L('サンプルデータ初期化', 'Reset Sample Data')}</span>
           </button>
           </>

@@ -202,7 +202,7 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
       <div className="bg-white rounded-2xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden flex flex-col max-h-[92vh]">
         
         {/* Header */}
-        <div className="bg-[#1E3A8A] text-white p-4 sm:p-5 flex items-center justify-between shrink-0">
+        <div className="bg-[#1F3C6B] text-white p-4 sm:p-5 flex items-center justify-between shrink-0">
           <div className="flex items-center space-x-2.5">
             <div className="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center">
               <CalendarIcon className="w-5 h-5" />
@@ -273,7 +273,7 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
 
               {/* Controls & Fast Year Selector */}
               <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-200/60">
-                <div className="flex items-center space-x-2 text-xs font-extrabold text-[#1E3A8A]">
+                <div className="flex items-center space-x-2 text-xs font-extrabold text-[#1F3C6B]">
                   <span>{getMonthLabel(threeMonths[0].year, threeMonths[0].month)} 〜 {getMonthLabel(threeMonths[2].year, threeMonths[2].month)}</span>
                   <div className="flex gap-1">
                     <button
@@ -303,7 +303,7 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
                       onClick={() => setYear(yr)}
                       className={`px-2 py-0.5 rounded font-bold transition text-[11px] ${
                         startYear === yr
-                          ? 'bg-[#1E3A8A] text-white'
+                          ? 'bg-[#1F3C6B] text-white'
                           : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
                       }`}
                     >
@@ -331,7 +331,7 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
                   <div key={`${year}-${month}`} className="bg-white p-3">
                     
                     {/* Month Bar */}
-                    <div className="bg-slate-100 rounded-lg px-3 py-1.5 font-black text-xs text-[#1E3A8A] mb-2 flex items-center justify-between">
+                    <div className="bg-slate-100 rounded-lg px-3 py-1.5 font-black text-xs text-[#1F3C6B] mb-2 flex items-center justify-between">
                       <span>{getMonthLabel(year, month)}</span>
                       <span className="text-[10px] text-slate-500 font-normal">
                         {language === 'en' ? 'Tap an open slot' : '「空き」表示の枠をタップ'}
@@ -406,7 +406,7 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
                             onClick={() => setSelectedDate(dateStr)}
                             className={`p-1 min-h-[56px] flex flex-col justify-between text-left transition rounded-xs ${
                               isSelected
-                                ? 'bg-[#1E3A8A] text-white font-bold ring-2 ring-blue-700 z-10'
+                                ? 'bg-[#1F3C6B] text-white font-bold ring-2 ring-blue-700 z-10'
                                 : !isCurrentMonth || isPast
                                 ? 'bg-slate-50/50 text-slate-300 cursor-not-allowed'
                                 : isAbsent
@@ -496,7 +496,7 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
                 <div className="flex flex-wrap items-center gap-1.5">
                   <span>
                     {language === 'en' ? 'Selected date: ' : '希望日: '}
-                    <strong className="text-[#1E3A8A] text-sm">{selectedDate}</strong>
+                    <strong className="text-[#1F3C6B] text-sm">{selectedDate}</strong>
                   </span>
                   {nextTicketToUse && (
                     <span className="font-bold text-amber-900 bg-amber-100 border border-amber-300 px-2 py-0.5 rounded text-[11px]">
@@ -525,7 +525,7 @@ const TransferBookingModalInner: React.FC<React.PropsWithChildren<TransferBookin
                 type="button"
                 disabled={!selectedDate || student.transferBalance <= 0}
                 onClick={handleConfirmBooking}
-                className="px-5 py-2 bg-[#1E3A8A] hover:bg-blue-900 disabled:bg-slate-300 text-white font-bold rounded-xl shadow-md transition"
+                className="px-5 py-2 bg-[#1F3C6B] hover:bg-blue-900 disabled:bg-slate-300 text-white font-bold rounded-xl shadow-md transition"
               >
                 {t('booking.confirm')}
               </button>

@@ -112,7 +112,7 @@ export const ParentDashboard: React.FC<ParentDashboardProps> = ({
       {/* Logged-in Parent Profile Header Bar */}
       <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-[#1E3A8A] text-white flex items-center justify-center font-bold text-lg shadow-sm">
+          <div className="w-10 h-10 rounded-xl bg-[#1F3C6B] text-white flex items-center justify-center font-bold text-lg shadow-sm">
             {currentStudent.name.charAt(0)}
           </div>
           <div>
@@ -184,7 +184,7 @@ export const ParentDashboard: React.FC<ParentDashboardProps> = ({
           onClick={() => setActiveTab('calendar')}
           className={`flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center space-x-1.5 ${
             activeTab === 'calendar'
-              ? 'bg-[#1E3A8A] text-white shadow-xs'
+              ? 'bg-[#1F3C6B] text-white shadow-xs'
               : 'text-slate-700 hover:bg-slate-300/60'
           }`}
         >
@@ -196,7 +196,7 @@ export const ParentDashboard: React.FC<ParentDashboardProps> = ({
           onClick={() => setActiveTab('cards')}
           className={`flex-1 py-2 px-3 rounded-xl text-xs font-extrabold transition flex items-center justify-center space-x-1.5 ${
             activeTab === 'cards'
-              ? 'bg-[#1E3A8A] text-white shadow-xs'
+              ? 'bg-[#1F3C6B] text-white shadow-xs'
               : 'text-slate-700 hover:bg-slate-300/60'
           }`}
         >
@@ -236,7 +236,7 @@ export const ParentDashboard: React.FC<ParentDashboardProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             
             {/* Report Absence Card */}
-            <div className="bg-[#1E3A8A] text-white rounded-2xl p-6 shadow-lg shadow-blue-900/10 flex flex-col justify-between space-y-4">
+            <div className="bg-[#1F3C6B] text-white rounded-2xl p-6 shadow-lg shadow-blue-900/10 flex flex-col justify-between space-y-4">
               <div>
                 <div className="inline-flex items-center space-x-1.5 bg-blue-800/80 px-2.5 py-1 rounded-lg text-xs font-bold text-blue-200 mb-2">
                   <Clock className="w-3.5 h-3.5 text-blue-300" />
@@ -255,9 +255,9 @@ export const ParentDashboard: React.FC<ParentDashboardProps> = ({
               <button
                 id="btn-report-absence-trigger"
                 onClick={() => setIsAbsenceModalOpen(true)}
-                className="w-full bg-white text-[#1E3A8A] hover:bg-blue-50 font-bold py-2.5 px-4 rounded-xl text-xs shadow-xs transition flex items-center justify-center space-x-1.5"
+                className="w-full bg-white text-[#1F3C6B] hover:bg-blue-50 font-bold py-2.5 px-4 rounded-xl text-xs shadow-xs transition flex items-center justify-center space-x-1.5"
               >
-                <PlusCircle className="w-4 h-4 text-[#1E3A8A]" />
+                <PlusCircle className="w-4 h-4 text-[#1F3C6B]" />
                 <span>{language === 'en' ? 'Open Absence Form' : '欠席連絡フォームを開く'}</span>
               </button>
             </div>
@@ -343,7 +343,7 @@ export const ParentDashboard: React.FC<ParentDashboardProps> = ({
                         <div>
                           {/* Ticket Missed Date Name (e.g. 8/17欠席分) */}
                           <div className="flex items-center gap-1.5 mb-1">
-                            <span className="inline-flex items-center gap-1 bg-[#1E3A8A] text-white text-xs font-black px-2.5 py-0.5 rounded-lg shadow-2xs">
+                            <span className="inline-flex items-center gap-1 bg-[#1F3C6B] text-white text-xs font-black px-2.5 py-0.5 rounded-lg shadow-2xs">
                               <Ticket className="w-3.5 h-3.5 text-amber-300" />
                               <span>【{language === 'en' ? `${t.absenceDate} Missed` : formatAbsenceLabel(t.absenceDate)}】</span>
                             </span>
