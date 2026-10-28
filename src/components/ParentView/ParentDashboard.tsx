@@ -206,7 +206,7 @@ export const ParentDashboard: React.FC<ParentDashboardProps> = ({
           </div>
           <button
             onClick={() => setIsChangeCredentialsOpen(true)}
-            className="px-3 py-1.5 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-xl text-xs transition shadow-2xs shrink-0 self-start sm:self-auto"
+            className="px-3 py-2 bg-[#1F3C6B] hover:bg-[#16305A] text-white font-bold rounded-xl text-xs transition shadow-2xs shrink-0 self-start sm:self-auto"
           >
             {language === 'en' ? 'Change PW Now' : '今すぐPWを変更する'}
           </button>
